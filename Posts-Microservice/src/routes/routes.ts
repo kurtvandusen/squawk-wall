@@ -8,7 +8,7 @@ const { randomBytes } = require("crypto");
 const router = express.Router();
 
 router.get('/api/posts/', (req: Request, res: Response) => {
-    PostsModel.find({}, (err, posts) => {
+    PostsModel.find({}, (err: any, posts: any) => {
         if (err) {
             res.send(err);
         }

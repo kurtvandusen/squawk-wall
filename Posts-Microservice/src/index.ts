@@ -9,7 +9,7 @@ app.use(router);
 
 const Startup = async () => {
   try {
-    await mongoose.connect('mongodb://post-mongo-service:27017/post');
+    await mongoose.connect('mongodb://posts-mongodb-service:27017/post');
     console.log('Connected to MongoDB');
   } catch (e) {
     console.log(e);

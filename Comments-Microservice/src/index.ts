@@ -31,7 +31,7 @@ async function processPostsMessage(msg: { content: { toString: () => any; }; }) 
 
 const Startup = async () => {
   try {
-    await mongoose.connect('mongodb://comment-mongo-service:27017/comments');
+    await mongoose.connect('mongodb://comments-mongodb-service:27017/comments');
     console.log('Connected to MongoDB');
 
     const amqpConnection = await amqp.connect("amqp://rabbitmq-service:5672", "heartbeat=30");

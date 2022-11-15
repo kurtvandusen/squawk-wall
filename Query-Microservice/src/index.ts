@@ -41,7 +41,7 @@ async function processPostMessage(msg: { content: { toString: () => any; }; }) {
 
 const Startup = async () => {
   try {
-    await mongoose.connect('mongodb://query-mongo-service:27017/query');
+    await mongoose.connect('mongodb://query-mongodb-service:27017/query');
     console.log('Connected to MongoDB');
 
     const amqpConnection = await amqp.connect("amqp://rabbitmq-service:5672", "heartbeat=30");

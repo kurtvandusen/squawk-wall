@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: posts-mongodb
-          image: mongodb
+          image: mongo
 ---
 apiVersion: v1
 kind: Service

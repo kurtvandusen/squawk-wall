@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get('/api/comments/:postId', (req: Request, res: Response) => {
     const postId = req.params.postId;
-    CommentsModel.find({ postId: postId }, (err, comments) => {
+    CommentsModel.find({ postId: postId }, (err: any, comments: any) => {
         if (err) {
             res.status(500).send(err);
         } else {

@@ -42,6 +42,8 @@ macOS and Linux:
 
 ## Runnning the Microservices  
 
+Start Docker and Kubernetes on your development system.
+
 From a terminal in the root dirctory of squawk-wall, run the following command:
 `skaffold dev`
 

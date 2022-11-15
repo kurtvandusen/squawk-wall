@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: query-mongodb-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: query-mongodb
+  template:
+    metadata:
+      labels:
+        app: query-mongodb
+    spec:
+      containers:
+        - name: query-mongodb
+          image: mongodb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: query-mongodb-service
+spec:
+  selector:
+    app: query-mongodb
+  ports:
+    - name: database
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

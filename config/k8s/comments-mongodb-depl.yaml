@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comments-mongodb-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: comments-mongodb
+  template:
+    metadata:
+      labels:
+        app: comments-mongodb
+    spec:
+      containers:
+        - name: comments-mongodb
+          image: mongodb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: comments-mongodb-service
+spec:
+  selector:
+    app: comments-mongodb
+  ports:
+    - name: database
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

@@ -76,3 +76,7 @@ docker push your-user-name/squawk-wall-query
 ```
 
 Update the skaffold.yaml and the config/k8s/ -depl.yaml files by replacing "kurtvandusen" with your Docker user name.
+
+## App Architecture  
+
+![Kubernetes Architecture](microservice-architecture-kubernetes.jpeg)

@@ -79,4 +79,5 @@ Update the skaffold.yaml and the config/k8s/ -depl.yaml files by replacing "kurt
 
 ## App Architecture  
 
-![Kubernetes Architecture](microservice-architecture-kubernetes.jpeg)
+![Kubernetes Architecture](squawk-wall-kubernetes.png)  
+![Database per Microservice Pattern](db-per-microservice.png)

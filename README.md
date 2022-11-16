@@ -44,6 +44,10 @@ macOS and Linux:
 
 Start Docker and Kubernetes on your development system.
 
+Deploy Ingress Nginx
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml`
+
+
 From a terminal in the root dirctory of squawk-wall, run the following command:
 `skaffold dev`
 

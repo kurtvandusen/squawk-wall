@@ -77,7 +77,21 @@ docker push your-user-name/squawk-wall-query
 
 Update the skaffold.yaml and the config/k8s/ -depl.yaml files by replacing "kurtvandusen" with your Docker user name.
 
-## App Architecture  
+## Microservice App Architecture  
 
-![Kubernetes Architecture](squawk-wall-kubernetes.png)  
-![Database per Microservice Pattern](db-per-microservice.png)
+### Kubernetes Architecture  
+
+![Kubernetes Architecture](kubernetes-architecture.png)  
+
+### Database per Microservice Pattern  
+
+![Database per Microservice Pattern](db-per-microservice.png)  
+
+### Cannonical Authority  
+
+Note on concurrency issues with async events based communication:  
+- Each microservice is a canonical authority for the data it controls.
+- No other microservice can create, update, read or destroy that data.
+- Microservices share the data they control by emitting events to the event bus.  
+
+![Cannonical Authority](cannonical-authority.png)

@@ -7,7 +7,7 @@ const { randomBytes } = require("crypto");
 
 const router = express.Router();
 
-router.get('/api/comments/:postId', (req: Request, res: Response) => {
+router.get('/api/posts/:postId/comments/', (req: Request, res: Response) => {
     const postId = req.params.postId;
     CommentsModel.find({ postId: postId }, (err: any, comments: any) => {
         if (err) {
@@ -19,7 +19,7 @@ router.get('/api/comments/:postId', (req: Request, res: Response) => {
     });
 });
  
-    router.post('/api/comments/:postId', async (req: Request, res: Response) => {
+    router.post('/api/posts/:postId/comments/', async (req: Request, res: Response) => {
         const { comment } = req.body;
         const commentId = randomBytes(4).toString("hex");
         const postId = req.params.postId;

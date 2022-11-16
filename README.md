@@ -55,7 +55,7 @@ Allow time for all of the services to start and connect. Stop any pods which fai
 
 Open your browser and navigate to http://squawk-wall.dev/. You may get a security warning. To bypass this in chrome, type "thisisunsafe" directly in the browser window.
 
-## Building your own Docker images
+## Building your own Docker images (optional)
 
 Create an account for Docker Hub and login from your CLI. Note: Replace "your-user-name" below with your Docker Hub user name.
 

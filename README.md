@@ -1,5 +1,5 @@
 # squawk-wall
-A demonstration app for Microservices with NodeJS, MongoDB, Docker, and Kubernetes.
+A demonstration app for Microservices with NodeJS, MongoDB, Docker, and Kubernetes that can run on your local development system.
 
 ## Installation
 
@@ -42,6 +42,12 @@ macOS and Linux:
 
 ## Runnning the Microservices  
 
+Start Docker and Kubernetes on your development system.
+
+Deploy Ingress Nginx
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml`
+
+
 From a terminal in the root dirctory of squawk-wall, run the following command:
 `skaffold dev`
 
@@ -49,7 +55,7 @@ Allow time for all of the services to start and connect. Stop any pods which fai
 
 Open your browser and navigate to http://squawk-wall.dev/. You may get a security warning. To bypass this in chrome, type "thisisunsafe" directly in the browser window.
 
-## Building your own Docker images
+## Building your own Docker images (optional)
 
 Create an account for Docker Hub and login from your CLI. Note: Replace "your-user-name" below with your Docker Hub user name.
 

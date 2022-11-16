@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: comments-mongodb
-          image: mongodb
+          image: mongo
 ---
 apiVersion: v1
 kind: Service

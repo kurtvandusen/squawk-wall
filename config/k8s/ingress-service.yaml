@@ -17,7 +17,7 @@ spec:
                 name: posts-service
                 port:
                   number: 5000
-          - path: /api/comments/?(.*)
+          - path: /api/posts/?(.*)/comments/
             pathType: Prefix
             backend:
               service:

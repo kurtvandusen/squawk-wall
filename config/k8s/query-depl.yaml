@@ -13,7 +13,7 @@ spec:
         app: query
     spec:
       containers:
-        - name: query
+        - name: query-microservice
           image: kurtvandusen/squawk-wall-query:latest
 ---
 apiVersion: v1

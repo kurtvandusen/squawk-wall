@@ -8,7 +8,7 @@ const { randomBytes } = require("crypto");
 const router = express.Router();
 
 router.get('/api/posts/', (req: Request, res: Response) => {
-    PostsModel.find({}, (err, posts) => {
+    PostsModel.find({}, (err: any, posts: any) => {
         if (err) {
             res.send(err);
         }
@@ -23,7 +23,7 @@ router.post('/api/posts/', async (req: Request, res: Response) => {
     try {
         const newPost = new PostsModel(postData);
         await newPost.save();
-        console.log("Saved posts to DB");
+        console.log("Saved post", + postId,  "to DB");
 
         const amqpConnection = await amqp.connect("amqp://rabbitmq-service:5672");
         console.log("Posts connected to RabbitMQ");

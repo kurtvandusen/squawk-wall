@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/api/query', (req: Request, res: Response) => {
   
-    QueryModel.find({}, (err, data) => {
+    QueryModel.find({}, (err: any, data: any) => {
         if (err) {
             res.status(500).send(err);
         } else {

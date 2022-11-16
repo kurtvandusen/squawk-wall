@@ -40,7 +40,7 @@ macOS and Linux:
  Open your hosts file and add the following line at the bottom:
 `127.0.0.1 squawk-wall.dev`
 
-## Runnning the Microservices  
+## Runnning the Microservices Locally in Development Mode  
 
 Start Docker and Kubernetes on your development system.
 

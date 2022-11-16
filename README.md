@@ -1,5 +1,5 @@
 # squawk-wall
-A demonstration app for Microservices with NodeJS, MongoDB, Docker, and Kubernetes that can run on your local development system.
+A demonstration app for Microservices with NodeJS, MongoDB, Docker, and Kubernetes that can run on your local development system. Uses Next JS with SSR (server side rendering) for the front end.
 
 ## Installation
 

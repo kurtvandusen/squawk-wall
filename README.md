@@ -98,4 +98,8 @@ Note on concurrency issues with async events based communication:
 - No other microservice can create, update, read or destroy that data.
 - Microservices share the data they control by emitting events to the event bus.  
 
-![Cannonical Authority](cannonical-authority.png)
+![Cannonical Authority](cannonical-authority.png)  
+
+## To Do  
+
+- Add Search component to Front-End using the Query microservice.

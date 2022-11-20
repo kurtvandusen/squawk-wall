@@ -1,0 +1,247 @@
+openapi: 3.1.0
+info:
+  title: Squawk Wall REST API
+  version: '1.0'
+  summary: 'Post, Comments and Query Microservices API'
+  description: ''
+  license:
+    name: MIT
+    identifier: MIT
+servers:
+  - url: 'http://localhost:3000'
+    description: squawk-wall.dev
+paths:
+  api/posts/:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    post:
+                      type: string
+                    postId:
+                      type: string
+                    __v:
+                      type: integer
+                x-examples:
+                  example-1:
+                    - _id: 637a59ed589ff2958e3348e6
+                      post: This is the first post
+                      postId: ef3e948a
+                      __v: 0
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-posts
+      description: Get all posts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  post:
+                    type: string
+                  postId:
+                    type: string
+                  __v:
+                    type: integer
+              x-examples:
+                example-1:
+                  - _id: 637a59ed589ff2958e3348e6
+                    post: This is the first post
+                    postId: ef3e948a
+                    __v: 0
+                  - _id: 637a5c6c589ff2958e3348ea
+                    post: This is the second one.
+                    postId: b45e8064
+                    __v: 0
+    parameters: []
+    post:
+      summary: ''
+      operationId: postapi-posts
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  post:
+                    type: string
+                  postId:
+                    type: string
+                x-examples:
+                  example-1:
+                    post: This is the first post
+                    postId: ef3e948a
+      description: Create a post.
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/JSON
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                post:
+                  type: string
+              x-examples:
+                example-1:
+                  post: This is the first post
+        description: The content of the new post.
+  'api/posts/{postId}/comments':
+    parameters:
+      - schema:
+          type: string
+        name: postId
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    postId:
+                      type: string
+                    comments:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          comment:
+                            type: string
+                          commentId:
+                            type: string
+                    __v:
+                      type: integer
+                x-examples:
+                  example-1:
+                    - _id: 637a6000589ff2958e3348ef
+                      postId: f943cc05
+                      comments:
+                        - comment: String
+                          commentId: String
+                      __v: 0
+      operationId: get-posts-postId-comments
+      description: Get all comments for a given postId.
+    post:
+      summary: ''
+      operationId: postapi-posts-postId-comments
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  comment:
+                    type: string
+                  commentId:
+                    type: string
+                x-examples:
+                  example-1:
+                    comment: The chicken.
+                    commentId: 6a61278a
+      description: Create a comment for a given postId.
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: applications/JSON
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+              x-examples:
+                example-1:
+                  comment: The chicken.
+components:
+  schemas:
+    Posts:
+      title: Posts
+      x-stoplight:
+        id: qphldcireguzs
+      type: object
+      examples:
+        - id: string
+      properties:
+        post:
+          type: string
+        postId:
+          type: string
+      required:
+        - post
+        - postId
+      description: Posts model
+    Comments:
+      title: Comments
+      x-stoplight:
+        id: iw5harqxrlenh
+      type: object
+      description: Comments model
+      examples:
+        - postId: string
+          comment:
+            - null
+      properties:
+        postId:
+          type: string
+        comments:
+          type: array
+          items:
+            type: object
+            properties:
+              comment:
+                type: string
+              commentId:
+                type: string
+      required:
+        - postId

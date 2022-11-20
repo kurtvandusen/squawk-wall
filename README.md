@@ -79,7 +79,7 @@ Update the skaffold.yaml and the config/k8s/ -depl.yaml files by replacing "kurt
 
 ## API Documentation  
 
-[openAPI yaml generated with Stoplight](./models/Squawk-Wall-API-Model.yaml)
+[openAPI yaml generated with Stoplight](./reference/Squawk-Wall-REST-API.yaml)
 
 ## Microservice App Architecture  
 
